@@ -7,6 +7,92 @@ const mobileMenu = () => {
   menu.classList.toggle('is-active');
   menuLinks.classList.toggle('active');
 };
+<script>
+
+        var dp;
+
+        function changeSource(sourceUrl) {
+
+            dp && dp.destroy();
+
+            dp = new DPlayer({
+
+                container: document.getElementById('player'),
+
+                video: {
+
+                    url: sourceUrl,
+
+                    type: 'hls'
+
+                },
+
+                preload: 'auto',
+
+                autoplay: true,
+
+                live: true,
+
+                // Buffer related options
+
+                chunkLoadMaxRetry: 3,
+
+                maxBufferSize: 0,
+
+                maxBufferLength: 30
+
+            });
+
+        }
+
+        // Initialize with the first playlist
+
+        changeSource('http://103.190.35.2:8082/T-Sports/tracks-v1a1/index.m3u8');
+
+    </script>
+
+
+        var dp;
+
+        function changeSource(sourceUrl) {
+
+            dp && dp.destroy();
+
+            dp = new DPlayer({
+
+                container: document.getElementById('player'),
+
+                video: {
+
+                    url: sourceUrl,
+
+                    type: 'hls'
+
+                },
+
+                preload: 'auto',
+
+                autoplay: true,
+
+                live: true,
+
+                // Buffer related options
+
+                chunkLoadMaxRetry: 3,
+
+                maxBufferSize: 0,
+
+                maxBufferLength: 30
+
+            });
+
+        }
+
+        // Initialize with the first playlist
+
+        changeSource('http://103.190.35.2:8082/T-Sports/tracks-v1a1/index.m3u8');
+
+    
 
 menu.addEventListener('click', mobileMenu);
 
